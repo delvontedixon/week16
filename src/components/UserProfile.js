@@ -1,4 +1,4 @@
-function UserProfile({ users }) {
+function UserProfile({ user }) {
   const { name, avatar, phone, id } = user;
 
   return (

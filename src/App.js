@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import UserProfile from "./components/UserProfile";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [users, setUsers] = useState([]);
