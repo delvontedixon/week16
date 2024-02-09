@@ -25,6 +25,6 @@ function App() {
       return <UserProfile user={user} />;
     })}
     </div>
-};
+}};
 
 export default App;
