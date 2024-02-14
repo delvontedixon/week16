@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import UserProfile from "./components/UserProfile";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Row } from "react-bootstrap";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -22,9 +23,11 @@ function App() {
   return (
     <div>
       <h1 className="text-center">Coaches</h1>
-      {users.map((user) => {
-        return <UserProfile user={user} />;
-      })}
+      <Row>
+        {users.map((user) => {
+          return <UserProfile user={user} />;
+        })}
+      </Row>
     </div>
   );
 }
