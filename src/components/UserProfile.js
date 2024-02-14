@@ -3,7 +3,7 @@ function UserProfile({ user }) {
 
   return (
     <div key={id} className="p-2 text-center border border-1 rounded-1">
-      <img src={avatar} alt={name} className="img-fluid" />
+      <img src={avatar} alt={name} className="img-fluid rounded-circle Image" />
       <h1>{name}</h1>
       <p>{phone}</p>
     </div>
