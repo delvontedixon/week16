@@ -1,5 +1,5 @@
 import { Col } from "react-bootstrap";
-
+import Badge from "./Badge.js";
 function UserProfile({ user }) {
   const { name, avatar, phone, id, teams } = user;
 
@@ -8,14 +8,7 @@ function UserProfile({ user }) {
       <img src={avatar} alt={name} className="img-fluid rounded-circle Image" />
       <h1 className="fs-4">{name}</h1>
       <p>{phone}</p>
-      {teams &&
-        teams.map((teams, index) => {
-          return (
-            <span key={index} className="badge bg-primary m-1">
-              {teams}
-            </span>
-          );
-        })}
+      <Badge teams={teams} />
     </Col>
   );
 }
