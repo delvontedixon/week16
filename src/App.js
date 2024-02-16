@@ -20,6 +20,27 @@ function App() {
     setUsers(data);
   };
 
+  let newUser = {
+    name: "Coach Dixon",
+    avatar: "",
+    phone: "555-555-5555",
+    teams: ["Bruner", "Letcher"],
+  };
+  //This is how I add users to page//
+  const addNewUser = async (newUser) => {
+    const response = await fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    });
+    const data = await response.json();
+    console.log(data);
+  };
+
+  addNewUser(newUser);
+
   return (
     <div>
       <h1 className="text-center">Coaches</h1>
