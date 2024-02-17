@@ -40,7 +40,7 @@ function App() {
     console.log(data);
   };
 
-  //addNewUser(newUser);
+  addNewUser(newUser);
 
   return (
     <div>
