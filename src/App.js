@@ -4,6 +4,7 @@ import UserProfile from "./components/UserProfile";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Row } from "react-bootstrap";
 import Title from "./components/Title.js";
+import Navbar from "./components/Navbar.js";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <div>
+      <Navbar />
       <Title />
       <Row>
         {users.map((user) => {
