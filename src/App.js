@@ -4,7 +4,8 @@ import UserProfile from "./components/UserProfile";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Row } from "react-bootstrap";
 import Title from "./components/Title.js";
-import Navbar from "./components/Navbar.js";
+import Navigationbar from "./components/Navbar.js";
+import Form from "./components/UserForm.js";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -22,14 +23,9 @@ function App() {
     setUsers(data);
   };
 
-  let newUser = {
-    name: "Coach Dixon",
-    avatar: "",
-    phone: "555-555-5555",
-    teams: ["Bruner", "Letcher"],
-  };
   //This is how I add users to page//
   const addNewUser = async (newUser) => {
+    console.log(newUser);
     const response = await fetch(URL, {
       method: "POST",
       headers: {
@@ -39,19 +35,21 @@ function App() {
     });
     const data = await response.json();
     console.log(data);
+    getUsers();
   };
 
-  addNewUser(newUser);
+  //addNewUser(newUser);
 
   return (
     <div>
-      <Navbar />
+      <Navigationbar />
       <Title />
       <Row>
-        {users.map((user) => {
-          return <UserProfile user={user} />;
+        {users.map((user, index) => {
+          return <UserProfile key={index} user={user} />;
         })}
       </Row>
+      <Form addNewUser={addNewUser} />
     </div>
   );
 }
