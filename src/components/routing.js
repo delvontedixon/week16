@@ -1,13 +1,13 @@
 import UserProfile from "./components/UserProfile";
 import Background from "./Background";
+import Navigationbar from "./Navbar";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { Navbar } from "react-bootstrap";
 
 export default function Routing(props) {
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
+        <Navigationbar />
         <Routes>
           {/* if the route is to /home, it will show the Home page */}
           <Route path="/userprofile" element={<UserProfile />} />
