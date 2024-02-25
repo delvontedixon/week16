@@ -1,9 +1,9 @@
-import UserProfile from "./components/UserProfile";
+import UserProfile from "./UserProfile";
 import Background from "./Background";
 import Navigationbar from "./Navbar";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-export default function Routing(props) {
+export default function Routing() {
   return (
     <div>
       <BrowserRouter>
