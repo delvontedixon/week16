@@ -8,7 +8,7 @@ function Navigationbar() {
           <Navbar.Brand href="#home">COACHES CORNER</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Coaches Background</Nav.Link>
+            <Nav.Link href="#background">Coaches Background</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

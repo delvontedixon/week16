@@ -6,6 +6,7 @@ import { Row } from "react-bootstrap";
 import Title from "./components/Title.js";
 import Navigationbar from "./components/Navbar.js";
 import Form from "./components/UserForm.js";
+import Routing from "./components/routing.js";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -43,6 +44,7 @@ function App() {
   return (
     <div>
       <Navigationbar />
+      <Routing />
       <Title />
       <Row>
         {users.map((user, index) => {
