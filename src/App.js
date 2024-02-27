@@ -6,7 +6,8 @@ import { Row } from "react-bootstrap";
 import Title from "./components/Title.js";
 import Navigationbar from "./components/Navbar.js";
 import Form from "./components/UserForm.js";
-import Routing from "./components/routing.js";
+import Background from "./components/Background.js";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -43,8 +44,19 @@ function App() {
 
   return (
     <div>
-      <Navigationbar />
-      <Routing />
+      <BrowserRouter>
+        <Navigationbar />
+        <Routes>
+          {/* added a home element to match with your links in the navbar component */}
+          {/* change "Home" to the component you want to appear on your home */}
+          <Route path="/home" element={<UserProfile />}></Route>
+          {/* if the route is to /home, it will show the Home page */}
+          <Route path="/userprofile" element={<UserProfile />}></Route>
+          {/* if the route is to /userprofile it will show the main page*/}
+          <Route path="/background" element={<Background />}></Route>
+          {/* if the route is to /background it will show the background page */}
+        </Routes>
+      </BrowserRouter>
       <Title />
       <Row>
         {users.map((user, index) => {
