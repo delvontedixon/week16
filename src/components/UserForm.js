@@ -1,10 +1,13 @@
+import React, { useState } from "react";
+
 function Form({ addNewUser }) {
+  const [coachName, setCoachName] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    const emailInput = document.getElementById("exampleInputEmail");
-    console.log("handle", emailInput.value);
+
+    console.log("handle", coachName);
     let newUser = {
-      name: emailInput.value,
+      name: coachName,
       avatar: "",
       phone: "555-555-5555",
       teams: ["Bruner", "Letcher"],
@@ -16,17 +19,18 @@ function Form({ addNewUser }) {
       <div className="col">
         <form>
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Coach Name</label>
+            <label htmlFor="coachName">Coach Name</label>
             <input
               type="email"
               className="form-control"
-              id="exampleInputEmail"
-              aria-describedby="emailHelp"
-              placeholder="Enter Name"
+              id="exampleInputCoachName"
+              aria-describedby="CoachName"
+              placeholder="Enter Coach Name"
+              onChange={(event) => setCoachName(event.target.value)}
             />
           </div>
           <button
-            onClick={handleSubmit}
+            onClick={(event) => handleSubmit(event)}
             type="text"
             className="btn btn-primary"
           >
