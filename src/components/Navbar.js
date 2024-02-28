@@ -9,13 +9,13 @@ function Navigationbar() {
         <Navbar.Brand href="#home">COACHES CORNER</Navbar.Brand>
         <Nav className="me-auto">
           {/* link to correspond to home route */}
-          <Link className="nav-link" to="/home">
+          <Link className="nav-link" to="/userprofile">
             Home
           </Link>
           {/* link to correspond to userprofile route */}
-          <Link className="nav-link" to="/userprofile">
+          {/* <Link className="nav-link" to="/userprofile">
             Profile
-          </Link>
+          </Link> */}
           {/* link to correspond to background route */}
           <Link className="nav-link" to="/background">
             Coaches Background

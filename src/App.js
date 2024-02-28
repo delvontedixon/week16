@@ -39,7 +39,17 @@ function App() {
     console.log(data);
     getUsers();
   };
-
+  //deleteUser
+  const deleteUser = async (user) => {
+    console.log(user);
+    const response = await fetch(URL + user.id, {
+      method: "DELETE",
+    });
+    const data = await response.json();
+    console.log(data);
+    setUsers(users.filter((u) => u.id !== user.id));
+    getUsers();
+  };
   //addNewUser(newUser);
 
   return (
@@ -51,7 +61,7 @@ function App() {
           {/* change "Home" to the component you want to appear on your home */}
           <Route path="/home" element={<UserProfile />}></Route>
           {/* if the route is to /home, it will show the Home page */}
-          <Route path="/userprofile" element={<UserProfile />}></Route>
+          {/* <Route path="/userprofile" element={<UserProfile />}></Route> */}
           {/* if the route is to /userprofile it will show the main page*/}
           <Route path="/background" element={<Background />}></Route>
           {/* if the route is to /background it will show the background page */}
@@ -60,7 +70,9 @@ function App() {
       <Title />
       <Row>
         {users.map((user, index) => {
-          return <UserProfile key={index} user={user} />;
+          return (
+            <UserProfile key={index} user={user} deleteUser={deleteUser} />
+          );
         })}
       </Row>
       <Form addNewUser={addNewUser} />

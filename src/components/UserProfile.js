@@ -2,7 +2,7 @@ import { Col, Button } from "react-bootstrap";
 import Badge from "./Badge.js";
 import { useState } from "react";
 
-function UserProfile({ user }) {
+function UserProfile({ user, deleteUser }) {
   const { name, avatar, phone, id, teams } = user;
   const [badgeStatus, setBadgeStatus] = useState(false);
 
@@ -16,6 +16,9 @@ function UserProfile({ user }) {
       <img src={avatar} alt={name} className="img-fluid rounded-circle Image" />
       <h1 className="fs-4">{name}</h1>
       <p>{phone}</p>
+      <Button variant="danger" onClick={() => deleteUser(user)}>
+        Delete
+      </Button>
       <Button variant="secondary" onClick={() => handleClick()}>
         Show Teams
       </Button>
